@@ -3,10 +3,10 @@ from time import struct_time
 
 import feedparser
 import pytest
+from content_tracker_plugin_api import SyncContext
 from pydantic import ValidationError
 
 from content_tracker_adapter_podcast.plugin import PodcastAdapter, PodcastConfig
-from content_tracker_plugin_api import SyncContext
 
 
 def test_package_registers_podcast_entry_point():
