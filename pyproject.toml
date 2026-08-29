@@ -1,0 +1,35 @@
+[project]
+name = "content-tracker-adapter-podcast"
+version = "0.1.0"
+description = "Podcast RSS/Atom adapter plugin for content-tracker"
+requires-python = ">=3.12"
+dependencies = [
+  "feedparser>=6,<7",
+  "pydantic>=2,<3",
+]
+
+[project.entry-points."content_tracker.adapters"]
+podcast = "content_tracker_adapter_podcast.plugin:PodcastAdapter"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "ruff>=0.12,<1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
