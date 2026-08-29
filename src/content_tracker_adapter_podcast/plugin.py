@@ -80,6 +80,13 @@ def _entry_url(entry) -> str | None:
         if href is not None:
             return href
 
+    for link_info in entry.get("links", []):
+        if link_info.get("rel") != "enclosure":
+            continue
+        href = _http_url(link_info.get("href"))
+        if href is not None:
+            return href
+
     return None
 
 

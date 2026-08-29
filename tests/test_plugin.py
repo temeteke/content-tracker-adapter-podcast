@@ -71,8 +71,11 @@ def test_fetch_uses_enclosure_when_entry_has_no_page_link(monkeypatch):
                 feedparser.FeedParserDict(
                     {
                         "title": "Episode",
-                        "enclosures": [
-                            {"href": "https://media.example.org/episode.mp3"}
+                        "links": [
+                            {
+                                "rel": "enclosure",
+                                "href": "https://media.example.org/episode.mp3",
+                            }
                         ],
                     }
                 )
