@@ -4,14 +4,13 @@ from time import struct_time
 from urllib.parse import urlparse
 
 import feedparser
-from pydantic import AnyHttpUrl, BaseModel, ConfigDict
-
 from content_tracker_plugin_api import (
     PLUGIN_API_VERSION,
     ContentCandidate,
     SyncContext,
     SyncResult,
 )
+from pydantic import AnyHttpUrl, BaseModel, ConfigDict
 
 
 class PodcastConfig(BaseModel):
