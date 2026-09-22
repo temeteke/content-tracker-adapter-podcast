@@ -31,6 +31,25 @@ sources:
 The MVP supports public HTTP(S) feeds. Private feed URLs containing credentials or tokens
 should not be committed to a public repository.
 
+## VS Code Dev Container
+
+The repository includes a Dev Container for VS Code. Open the repository folder and run
+`Dev Containers: Reopen in Container`.
+
+The container installs Python 3.14, installs the current content-tracker backend from GitHub
+to provide `content_tracker_plugin_api`, and installs this adapter in editable mode with its
+development dependencies.
+
+After creation, run:
+
+```console
+pytest
+ruff check .
+```
+
+The Dev Container is intentionally standalone. Runtime podcast feed URLs remain outside this
+public repository.
+
 ## Development
 
 The adapter relies on the host-provided `content_tracker_plugin_api`. Install the current
